@@ -7,11 +7,16 @@
     <header class="row">
         <div class="col">
             <div th:replace="~{admin/fragments/header :: header}"></div>
-
+			<div>
+		        <span th:text="#{iotstar.message.hello}"></span>
+		        <a href="?language=en">English</a>
+		        <a href="?language=vi_VN">Viet Nam</a>
+   			 </div>
         </div>
     </header>
 
     <main class="container">
+    <br>
         <!-- Optional Navigation -->
         <!-- <nav class="row">
             <div class="col">

@@ -56,7 +56,7 @@ public class CategoryController {
 	public ModelAndView saveOrUpdate(ModelMap model, @Valid @ModelAttribute("category") CategoryModel cateModel,
 			BindingResult result) {
 		if (result.hasErrors()) {
-			return new ModelAndView("admin/category/add");
+			return new ModelAndView("admin/fragments/category/add");
 		}
 		Category entity = new Category();
 		// Copy model sang Entity
@@ -95,7 +95,7 @@ public class CategoryController {
 			// Đẩy dữ liệu ra view
 			model.addAttribute("category", cateModel);
 
-			return new ModelAndView("admin/category/add", model);
+			return new ModelAndView("admin/fragments/category/add", model);
 
 		}
 		model.addAttribute("message", "Category is not existed!!!!");
@@ -146,7 +146,7 @@ public class CategoryController {
 
 		}
 		model.addAttribute("categoryPage", resultPage);
-		return "admin/category/list";
+		return "admin/fragments/category/searchpaging";
 	}
 
 }

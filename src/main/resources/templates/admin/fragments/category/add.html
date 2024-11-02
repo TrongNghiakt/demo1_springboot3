@@ -8,13 +8,13 @@
 <body>
     <section class="row" layout:fragment="content">
             <h2 th:text="${category.isEdit} ? 'Edit Category' : 'Add New Category'">Add New Category</h2>
-        <form th:action="@{/admin/categories/saveOrUpdate}" method="POST" th:object="${category}">
-            <div class="mb-3" th:if="${category.isEdit}">
+        <form th:action="@{/admin/categories/save}" method="POST" th:object="${category}">
+            <div class="mb-3" th:if="${category.isEdit== false}">
                 <label for="categoryId" class="form-label">Category ID:</label>
                 <input type="hidden" th:field="*{isEdit}">
-                <input type="text" readonly class="form-control" th:field="*{categoryId}"
-                       id="categoryId" name="categoryId" placeholder="Category Id">
-                <div th:if="${#fields.hasErrors('categoryId')}"
+                <input type="text" readonly class="form-control" th:field="*{id}"
+                       id="id" name="id" placeholder="Category Id">
+                <div th:if="${#fields.hasErrors('id')}"
                      id="categoryIdId" class="form-text text-muted"><span class="text-danger">Category ID is required!</span></div>
             </div>
 
